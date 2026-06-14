@@ -1,5 +1,8 @@
 # Chen_project
 This is William Chen's brainhack school project repo.
+During this semester's BrainHack School, I explored an alternative approach to analyzing data from our laboratory's ICT project.
+In my thesis research, I employed a **seed-to-voxel resting-state functional connectivity** approach. In contrast, for this BrainHack School project, I adopted the **ROI-to-ROI functional connectivity** method introduced in the course. In addition, I incorporated my own modification by using a **subject-specific AAL atlas** to achieve more precise and individualized analyses.
+
 
 ## Notes
 
@@ -10,8 +13,7 @@ I am currently considering writing a more detailed user guide for the pipeline X
 * The shell scripts stored in the `/bin` directory should be placed under `~/bin`
 
 
-# About My Project
-## Functional Connectivity Changes Induced by LEGO Robot Inference Training in Aging Brain (For BrainHack school)
+# About My Project: Functional Connectivity Changes Induced by LEGO Robot Inference Training in Aging Brain (For BrainHack school)
 Abstract:
   In 2024, older adults accounted for 19.2% of Taiwan’s total population. Even more strikingly, this proportion is projected to reach 20.1% in 2025[1], officially making Taiwan into a super-aged society. Population aging is an on-going and unstoppable process. Undoubtedly, the cognitive decline associated with aging has long been regarded as one of the major challenges faced by modern societies. Taking action against cognitive decline in elders is both important and urgent. Our lab collaborate with NTSEC(National Taiwan Science Education Center). The ICT project (Inference Clinical Trial project) explores the use of non-invasive interventions to improve cognitive and inference abilities in older adults, such as handicraft DIY activities, forest exercise, board games, and the LEGO robot training program investigated in the present project.	In the LEGO robot and coding training, elder participants were randomly assigned to either the Active or Passive Inference group under a double-blind design. During the course, participants performed various tasks — for example, programming the robot to move its arms and play music. They were required to actively form strategies and hypotheses, control the LEGO robot through coding, and adjust their control strategies in real time based on the feedback provided by the robot. Through this systematic training program, it aimed to enhance cognitive and active Inference abilities in older adults.
   
