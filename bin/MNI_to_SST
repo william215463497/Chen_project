@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# MNI ROI TO SST using iy
+#
+# Usage: iy applyon mbfn rf
+#
+# iy - iy path
+# applyon - apply on ROI in MNI
+# mbfn - Matlab batch output file name.
+# rf - flag to run matlabbatch, 0: no, 1: yes
+#
+# 20260521 Created by William
+
+# Assign parameters
+iy=${1}
+applyon=${2}
+mbfn=${3}
+rf=${4}
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nosplash > matlab.out << EOF
+  addpath('/opt/spm/');
+  spm('defaults', 'FMRI');
+  spm_jobman('initcfg');
+
+  settings;
+  matlabbatch{1}.spm.util.defs.comp{1}.def = {'${iy}'};
+  matlabbatch{1}.spm.util.defs.out{1}.pull.fnames = {'${applyon}'};
+  matlabbatch{1}.spm.util.defs.out{1}.pull.savedir.savesrc = 1;
+  matlabbatch{1}.spm.util.defs.out{1}.pull.interp = 0;
+  matlabbatch{1}.spm.util.defs.out{1}.pull.mask = 1;
+  matlabbatch{1}.spm.util.defs.out{1}.pull.fwhm = [0 0 0];
+  matlabbatch{1}.spm.util.defs.out{1}.pull.prefix = 'SST';
+
+  save('${mbfn}','matlabbatch');
+  if ${rf},
+    spm_jobman('run',matlabbatch);
+  end
+exit;
+EOF

@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+# MASK EPI WITH ROI(EPI*ROI)
+#
+#
+# ROI - ROI_* path
+# EPI - EPI* path
+# NAME- SAVE NAME
+
+
+# 20260521 Created by William
+
+# Assign parameters
+ROI=${1}
+EPI=${2}
+NAME=${3}
+
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nosplash > matlab.out << EOF
+  addpath('/opt/spm/');
+  spm('defaults', 'FMRI');
+  spm_jobman('initcfg');
+
+  settings;
+  mask_hdr = spm_vol('${ROI}'); 
+  mask_img = spm_read_vols(mask_hdr);
+  
+  epi_hdrs = spm_vol('${EPI}'); 
+  nvols = length(epi_hdrs);
+  
+  out_hdrs = epi_hdrs; 
+  out_filename = '${NAME}'; 
+  
+  fprintf('4DEPI VOLUME:\n', nvols);
+  for t = 1:nvols
+      out_hdrs(t).fname = out_filename;
+      epi_img = spm_read_vols(epi_hdrs(t));
+      
+      masked_img = epi_img .* mask_img;
+      
+      spm_write_vol(out_hdrs(t), masked_img);
+  end
+  fprintf('SAVED\n');
+
+
+exit;
+EOF

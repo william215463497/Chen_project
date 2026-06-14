@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# ZMAP(no seed) with rc1
+#
+# Usage: iy applyon mbfn rf
+#
+# Uinputdat - txt
+# name - EXPORT NAME
+# dir - EXPORT dir
+# mbfn - Matlab batch output file name.
+# rf - flag to run matlabbatch, 0: no, 1: yes
+#
+
+# 20260524 Created by William
+
+# Assign parameters
+inputdat=${1}
+name=${2}
+dir=${3}
+mbfn=${4}
+rf=${5}
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nosplash > matlab.out << EOF
+  addpath('/opt/spm/');
+  spm('defaults', 'FMRI');
+  spm_jobman('initcfg');
+
+  file_list = textread('${inputdat}', '%s', 'delimiter', '\n');
+  matlabbatch{1}.spm.util.imcalc.input = file_list;
+  matlabbatch{1}.spm.util.imcalc.output = '${name}';
+  matlabbatch{1}.spm.util.imcalc.outdir = {'${dir}'};
+  matlabbatch{1}.spm.util.imcalc.expression = 'i1 .*  (i2>0)';
+  matlabbatch{1}.spm.util.imcalc.var = struct('name', {}, 'value', {});
+  matlabbatch{1}.spm.util.imcalc.options.dmtx = 0;
+  matlabbatch{1}.spm.util.imcalc.options.mask = 0;
+  matlabbatch{1}.spm.util.imcalc.options.interp = 0;
+  matlabbatch{1}.spm.util.imcalc.options.dtype = 16;
+
+
+  save('${mbfn}','matlabbatch');
+  if ${rf},
+    spm_jobman('run',matlabbatch);
+  end
+exit;
+EOF

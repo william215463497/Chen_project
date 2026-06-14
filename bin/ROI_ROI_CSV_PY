@@ -1,0 +1,27 @@
+#!/bin/bash
+#/home/william_chen/bin/ROI_ROI_CSV_PY
+# Calling /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity/code/PYTHON/ROI_ROI_CSV_PY.py
+#
+# Usage: 
+#
+# my_func_files=${1}                 #.nii.gz
+# my_confound_files=${2}            #multiple_regressors_epi1
+# atlas_filepath=${3}               #ATLAS
+# label_filepath=${4}               #ATLAS.txt
+# save_name=${5}  
+#
+
+# 20260610 Created by William
+
+
+my_func_files=${1}                 #.nii.gz
+my_confound_files=${2}            #multiple_regressors_epi1
+atlas_filepath=${3}               #ATLAS
+label_filepath=${4}               #ATLAS.txt
+save_name=${5}  
+
+# echo "seed_path=${seed_path}"
+# echo "epi_path=${epi_path}"
+
+
+python3 /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity/code/PYTHON/ROI_ROI_CSV_PY.py "${my_func_files}" "${my_confound_files}" "${atlas_filepath}" "${label_filepath}" "${save_name}"

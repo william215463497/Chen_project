@@ -1,0 +1,48 @@
+#!/bin/bash
+#
+# SST ROI to SUB using u
+#
+# Usage: iy applyon mbfn rf
+#
+# U - u_* path
+# applyon - apply on ROI in MNI
+# mbfn - Matlab batch output file name.
+# rf - flag to run matlabbatch, 0: no, 1: yes
+#
+
+#dartel.times = [0 1] FORWARD(SST2SUB)
+
+# 20260521 Created by William
+
+# Assign parameters
+U=${1}
+applyon=${2}
+mbfn=${3}
+rf=${4}
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nosplash > matlab.out << EOF
+  addpath('/opt/spm/');
+  spm('defaults', 'FMRI');
+  spm_jobman('initcfg');
+  
+  settings;
+  matlabbatch{1}.spm.util.defs.comp{1}.dartel.flowfield = {'${U}'};
+  matlabbatch{1}.spm.util.defs.comp{1}.dartel.times = [0 1];
+  matlabbatch{1}.spm.util.defs.comp{1}.dartel.K = 6;
+  matlabbatch{1}.spm.util.defs.comp{1}.dartel.template = {''};
+  matlabbatch{1}.spm.util.defs.out{1}.pull.fnames = {'${applyon}'};
+  matlabbatch{1}.spm.util.defs.out{1}.pull.savedir.savesrc = 1;
+  matlabbatch{1}.spm.util.defs.out{1}.pull.interp = 0;
+  matlabbatch{1}.spm.util.defs.out{1}.pull.mask = 1;
+  matlabbatch{1}.spm.util.defs.out{1}.pull.fwhm = [0 0 0];
+  matlabbatch{1}.spm.util.defs.out{1}.pull.prefix = 'w';
+
+
+  save('${mbfn}','matlabbatch');
+  if ${rf},
+    spm_jobman('run',matlabbatch);
+  end
+exit;
+EOF

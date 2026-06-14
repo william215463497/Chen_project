@@ -1,0 +1,74 @@
+#!/bin/bash
+#
+# 
+#
+# Usage: iy applyon mbfn rf
+#
+# Uinputdat - txt
+# name - EXPORT NAME
+# dir - EXPORT dir
+# mbfn - Matlab batch output file name.
+# rf - flag to run matlabbatch, 0: no, 1: yes
+#
+
+# 20260524 Created by William
+
+# Assign parameters
+inputdat=${1}
+name=${2}
+dir=${3}
+mbfn=${4}
+rf=${5}
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nosplash > matlab.out << EOF
+  addpath('/opt/spm/');
+  spm('defaults', 'FMRI');
+  spm_jobman('initcfg');
+
+  settings;
+
+  % 1. 安全地開啟您的文字檔
+  fileID = fopen('${inputdat}', 'r');
+
+  % 2. 準備一個乾淨的 Cell 陣列
+  file_list = {};
+
+  % 3. 一行一行讀，過濾掉任何隱藏的空白
+  line = fgetl(fileID);
+  while ischar(line)
+      clean_line = deblank(line);
+      if ~isempty(clean_line)
+          % 如果檔名結尾沒有 ',1'，這裡可以幫您自動補上，確保 SPM 讀取正確
+          if ~endsWith(clean_line, ',1')
+              clean_line = [clean_line, ',1'];
+          end
+          file_list{end+1, 1} = clean_line;
+      end
+      line = fgetl(fileID);
+  end
+  fclose(fileID);
+
+  % 4. 直接指派給 SPM (不用任何花俏的轉換)
+  matlabbatch{1}.spm.util.imcalc.input = file_list;
+
+
+
+
+  matlabbatch{1}.spm.util.imcalc.output = '${name}';
+  matlabbatch{1}.spm.util.imcalc.outdir = {'${dir}'};
+  matlabbatch{1}.spm.util.imcalc.expression = 'i1-i2';
+  matlabbatch{1}.spm.util.imcalc.var = struct('name', {}, 'value', {});
+  matlabbatch{1}.spm.util.imcalc.options.dmtx = 0;
+  matlabbatch{1}.spm.util.imcalc.options.mask = 0;
+  matlabbatch{1}.spm.util.imcalc.options.interp = 0;
+  matlabbatch{1}.spm.util.imcalc.options.dtype = 16;
+
+
+  save('${mbfn}','matlabbatch');
+  if ${rf},
+    spm_jobman('run',matlabbatch);
+  end
+exit;
+EOF

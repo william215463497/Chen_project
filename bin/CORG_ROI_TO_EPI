@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+# SST ROI to SUB using u
+# RESLICE AND CORG
+#
+# Usage: iy applyon mbfn rf
+#
+# U - u_* path
+# applyon - apply on ROI in MNI
+# mbfn - Matlab batch output file name.
+# rf - flag to run matlabbatch, 0: no, 1: yes
+#
+
+#dartel.times = [0 1] FORWARD(SST2SUB)
+
+# 20260521 Created by William
+
+# Assign parameters
+FIX=${1}
+MOVE=${2}
+mbfn=${3}
+rf=${4}
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nosplash > matlab.out << EOF
+  addpath('/opt/spm/');
+  spm('defaults', 'FMRI');
+  spm_jobman('initcfg');
+  
+  settings;
+  matlabbatch{1}.spm.spatial.coreg.estwrite.ref = {'${FIX}'};
+  matlabbatch{1}.spm.spatial.coreg.estwrite.source = {'${MOVE}'};
+  matlabbatch{1}.spm.spatial.coreg.estwrite.other = {''};
+  matlabbatch{1}.spm.spatial.coreg.estwrite.eoptions.cost_fun = 'nmi';
+  matlabbatch{1}.spm.spatial.coreg.estwrite.eoptions.sep = [4 2];
+  matlabbatch{1}.spm.spatial.coreg.estwrite.eoptions.tol = [0.02 0.02 0.02 0.001 0.001 0.001 0.01 0.01 0.01 0.001 0.001 0.001];
+  matlabbatch{1}.spm.spatial.coreg.estwrite.eoptions.fwhm = [7 7];
+  matlabbatch{1}.spm.spatial.coreg.estwrite.roptions.interp = 0;
+  matlabbatch{1}.spm.spatial.coreg.estwrite.roptions.wrap = [0 0 0];
+  matlabbatch{1}.spm.spatial.coreg.estwrite.roptions.mask = 0;
+  matlabbatch{1}.spm.spatial.coreg.estwrite.roptions.prefix = 'r';
+
+
+  save('${mbfn}','matlabbatch');
+  if ${rf},
+    spm_jobman('run',matlabbatch);
+  end
+exit;
+EOF

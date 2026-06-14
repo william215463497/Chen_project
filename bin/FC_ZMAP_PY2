@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Calling /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity/code/PYTHON/FC_ZMAP.py
+#
+# Usage: 
+#
+# epi_path
+# seed_path
+# output_path
+#
+
+# 20260521 Created by William
+
+
+
+seed_path=${1}
+epi_path=${2}
+output_path=${3}
+c1_file=${4}
+
+
+# echo "seed_path=${seed_path}"
+# echo "epi_path=${epi_path}"
+# echo "output_path=${output_path}"
+
+python3 /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity/code/PYTHON/FC_ZMAP2.py "${seed_path}" "${epi_path}" "${output_path}" "${c1_file}"

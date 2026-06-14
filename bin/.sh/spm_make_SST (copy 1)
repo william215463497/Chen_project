@@ -1,0 +1,75 @@
+#!/bin/bash
+#
+# Setup (with option to run) SPM25 coregistration module using shell 
+# script invoking matlab.
+#
+# Usage: spm_make_SST inputdat mbfn rf
+#
+# inputdat - Text filename with fullpaths per row per 
+#            IMAGE type for SST. i.e., rc1, rc2, rc3 ..., rc6. 
+# mbfn - Matlab batch output file name.
+# rf - flag to run matlabbatch, 0: no, 1: yes
+#
+# 20251031 Created by Josh Goh.
+
+# Assign parameters
+data=${1}
+beh=${2}
+TR=${3}
+
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nodesktop -nosplash > matlab.out << EOF
+	settings;
+	for sub = subname
+
+    subID = sprintf('s%04d', sub);
+
+    for runs = 1:4
+        
+        rn = int2str(runs);
+        
+        
+     
+        behfile = fullfile(behfolder, subID, ...
+                           [subID '_' run '_VRIT_onset_test.csv']);
+        
+        beh_tbl = readtable(behfile);
+        
+        
+        last_test_end = max(beh_tbl{:, 'end_test_question_time'});
+        
+     
+        true_length = fix(last_test_end / TR);
+        
+        
+        regressorsfilename = fullfile(datadir, ...
+            subID, 'func', ...
+            ['rp_' subID '_TASK' rn '_' runname '.txt']);
+        
+        rp = load(regressorsfilename);
+       
+        true_length = min(true_length, size(rp, 1));
+        
+        rp_cut = rp(1:true_length, :);
+ 
+        outdir = fullfile(datadir, subID, 'func');
+        if ~exist(outdir, 'dir')
+            mkdir(outdir);
+        end
+        
+        outfile = fullfile(outdir, ...
+            ['rp_cutend_' subID '_TASK' rn '_' runname '.txt']);
+        
+        save(outfile, 'rp_cut', '-ascii');
+        
+        fprintf('Sub %s run %s: original %d vols -> cut to %d vols\n', ...
+            subID, run, size(rp,1), true_length);
+        
+    end
+end
+
+exit;
+
+EOF

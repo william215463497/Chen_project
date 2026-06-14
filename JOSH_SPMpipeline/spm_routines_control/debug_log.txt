@@ -1,0 +1,411 @@
+Working on NTUSEC008
+Working on NTUSEC008 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC008/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220304142158_7.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC008/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220304142158_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC008 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC008/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220304142158_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC008 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC008 T2 to EPI coregistration done.
+Working on NTUSEC008 T1 to EPI-coregistered T2 coregistration.
+{Operation terminated by user during userpath>isAbsolute (line 116)
+
+
+In userpath (line 57)
+if ~exist(p,'dir') || ~isAbsolute(p)
+
+In pathdef (line 2408)
+    p = [userpath separator getenv('MATLABPATH') separator p];
+} 
+{Operation terminated by user during userpath>isAbsolute (line 116)
+
+
+In userpath (line 57)
+if ~exist(p,'dir') || ~isAbsolute(p)
+
+In pathdef (line 2408)
+    p = [userpath separator getenv('MATLABPATH') separator p];
+} 
+{Unrecognized function or variable 'fullfile'.
+} 
+{Error occurred during background graphics initialization: Undefined function
+'fullfile' for input arguments of type 'char'.
+} 
+{Unrecognized function or variable 'settings'.
+} 
+{Unrecognized function or variable 'spm_jobman'.
+} 
+NTUSEC008 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC008 preprocessing done.
+Working on NTUSEC009
+Working on NTUSEC009 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC009/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220304153406_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC009/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220304153406_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC009 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC009/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220304153406_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC009 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC009 T2 to EPI coregistration done.
+Working on NTUSEC009 T1 to EPI-coregistered T2 coregistration.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC009 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC009 preprocessing done.
+Working on NTUSEC011
+Working on NTUSEC011 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC011/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220225145643_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC011/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220225145643_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC011 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC011/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220225145643_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC011 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC011 T2 to EPI coregistration done.
+Working on NTUSEC011 T1 to EPI-coregistered T2 coregistration.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC011 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC011 preprocessing done.
+Working on NTUSEC012
+Working on NTUSEC012 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC012/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220224120400_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC012/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220224120400_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC012 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC012/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220224120400_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC012 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC012 T2 to EPI coregistration done.
+Working on NTUSEC012 T1 to EPI-coregistered T2 coregistration.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC012 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC012 preprocessing done.
+Working on NTUSEC019
+Working on NTUSEC019 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC019/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220317163853_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC019/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220317163853_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC019 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC019/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220317163853_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC019 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC019 T2 to EPI coregistration done.
+Working on NTUSEC019 T1 to EPI-coregistered T2 coregistration.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC019 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC019 preprocessing done.
+Working on NTUSEC037
+Working on NTUSEC037 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC037/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220412111721_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC037/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220412111721_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC037 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC037/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220412111721_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC037 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC037 T2 to EPI coregistration done.
+Working on NTUSEC037 T1 to EPI-coregistered T2 coregistration.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC037 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC037 preprocessing done.
+Working on NTUSEC049
+Working on NTUSEC049 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC049/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220503151732_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC049/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220503151732_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC049 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC049/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220503151732_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC049 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC049 T2 to EPI coregistration done.
+Working on NTUSEC049 T1 to EPI-coregistered T2 coregistration.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC049 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC049 preprocessing done.
+Working on NTUSEC050
+Working on NTUSEC050 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC050/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220503140712_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC050/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220503140712_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC050 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC050/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220503140712_2.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC050 T1 to EPI-coregistered T2 coregistration done.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC050 T2 to EPI coregistration done.
+Working on NTUSEC050 T1 to EPI-coregistered T2 coregistration.
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC050 T1 to EPI-coregistered T2 coregistration done.
+NTUSEC050 preprocessing done.
+Working on NTUSEC068
+Working on NTUSEC068 T2 to EPI coregistration.
+DEBUG EPI FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC068/nii/REST_SES01/arREST_REST_3.4x3.4x4_20220726151609_6.nii
+DEBUG T2 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC068/nii/REST_SES01/T2/T2_t2_tse_tra_256_20220726151609_5.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+Working on NTUSEC068 T1 to EPI-coregistered T2 coregistration.
+DEBUG T1 FILE: /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC068/nii/REST_SES01/T1/T1_t1_mprage_sag_p2_iso_20220726151609_14.nii
+{Error using MATLABbatch system
+Job execution failed. The full log of this run can be found in MATLAB command
+window, starting with the lines (look for the line showing the exact #job as
+displayed in this error message)
+------------------
+Running job #1
+------------------
+} 
+NTUSEC068 T1 to EPI-coregistered T2 coregistration done.
+ls: cannot access /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC068/nii/REST_SES02/ar*REST*.nii: No such file or directory
+ls: cannot access /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC068/nii/REST_SES02/T2/*T2*.nii: No such file or directory
+{Error using textread (line 115)
+File not found.
+} 
+{Unrecognized function or variable 'other'.
+} 
+   if ,
+      |
+{Error: Invalid expression. Check for missing or extra characters.
+} 
+{Error using spm_jobman>fill_run_job (line 472)
+No executable modules, but still unresolved dependencies or incomplete module
+inputs.
+
+Error in spm_jobman (line 247)
+        sts = fill_run_job('run', cjob, varargin{3:end});
+} 
+   end
+   |
+{Error: Illegal use of reserved keyword "end".
+} 
+NTUSEC068 T2 to EPI coregistration done.
+Working on NTUSEC068 T1 to EPI-coregistered T2 coregistration.
+ls: cannot access /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity//data/derivatives/NTUSEC068/nii/REST_SES02/T1/*T1*.nii: No such file or directory

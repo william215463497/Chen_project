@@ -1,0 +1,94 @@
+#!/bin/bash
+#
+# MNI ROI TO SST using iy
+#
+# Usage: iy applyon mbfn rf
+#
+# iy - iy path
+# applyon - apply on ROI in MNI
+# mbfn - Matlab batch output file name.
+# rf - flag to run matlabbatch, 0: no, 1: yes
+#
+# 20260521 Created by William
+
+# Assign parameters
+iy=${1}
+applyon=${2}
+mbfn=${3}
+rf=${4}
+
+# Call matlab with input script
+unset DISPLAY
+matlab -nosplash > matlab.out << EOF
+  addpath('/opt/spm/');
+  spm('defaults', 'FMRI');
+  spm_jobman('initcfg');
+
+    settings;
+  % 初始化 SPM Batch 系統
+  spm_jobman('initcfg');
+  matlabbatch = {};
+
+  % =========================================================================
+  % 1. 定義基本路徑與受試者清單
+  % =========================================================================
+  DERIVATIVES_DIR = '/bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity/data/derivatives';
+  OUTPUT_DIR      = fullfile(DERIVATIVES_DIR, 'ZMAP', '2LV_PAIR');
+
+  % 定義您要跑的所有受試者清單 (請依實際情況補齊)
+  subject_list = {'NTUSEC008', 'NTUSEC009', 'NTUSEC010', 'NTUSEC011'}; 
+
+  % 指定 2nd-level 結果輸出的資料夾
+  matlabbatch{1}.spm.stats.factorial_design.dir = {OUTPUT_DIR};
+
+  % =========================================================================
+  % 2. 利用迴圈自動搜尋檔案並建立成對配對 (Pairs)
+  % =========================================================================
+  for s = 1:length(subject_list)
+      subj = subject_list{s};
+      
+      % --- 情況 A：如果您的目錄結構如同您寫的 ${DERIVATIVES_DIR}/${subj}/ZMAP/... ---
+      ses01_dir = fullfile(DERIVATIVES_DIR, subj, 'ZMAP', '8mm', 'roi1_HIP_R', 'ses01');
+      ses02_dir = fullfile(DERIVATIVES_DIR, subj, 'ZMAP', '8mm', 'roi1_HIP_R', 'ses02');
+      
+      % --- 情況 B：如果您實際的受試者編號「只在檔名」，目錄大家都共用 (如您貼的範例) ---
+      % 如果是情況 B，請取消下面這兩行的註解(%%)，並把上面情況 A 的兩行加上註解
+      %% ses01_dir = fullfile(DERIVATIVES_DIR, 'ZMAP', '8mm', 'roi1_HIP_R', 'ses01');
+      %% ses02_dir = fullfile(DERIVATIVES_DIR, 'ZMAP', '8mm', 'roi1_HIP_R', 'ses02');
+      
+      % 定義過濾檔名的關鍵字 (搜尋包含該 subj 且以 .nii 結尾的檔案)
+      % ^ 代表開頭, .* 代表任意字元, $ 代表結尾
+      file_filter = ['^.*' subj '.*\.nii$']; 
+      
+      % 使用 spm_select 自動抓取絕對路徑並補上 ,1
+      file_ses01 = spm_select('FPList', ses01_dir, file_filter);
+      file_ses02 = spm_select('FPList', ses02_dir, file_filter);
+      
+      % 安全檢查：確保兩個時間點都有成功抓到剛好 1 張影像
+      if size(file_ses01, 1) ~= 1 || size(file_ses02, 1) ~= 1
+          error('受試者 %s 檔案抓取錯誤！ses01 抓到 %d 張，ses02 抓到 %d 張。請檢查路徑與關鍵字。', ...
+                subj, size(file_ses01, 1), size(file_ses02, 1));
+      end
+      
+      % 核心：將這對影像塞入當前的 pair(s) 中
+      % 這裡統一設定：第一張放後測 (ses02)，第二張放前測 (ses01)
+      matlabbatch{1}.spm.stats.factorial_design.des.pt.pair(s).scans = {
+          deblank(file_ses02)  % deblank 確保移除不必要的空白字元
+          deblank(file_ses01)
+      };
+      
+      fprintf('成功配對 Subject %d/%d: %s (ses02 & ses01)\n', s, length(subject_list), subj);
+  end
+
+
+
+
+
+
+
+  save('${mbfn}','matlabbatch');
+  if ${rf},
+    spm_jobman('run',matlabbatch);
+  end
+exit;
+EOF

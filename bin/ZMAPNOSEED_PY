@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Calling /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity/code/PYTHON/ZMAP-SEED.py
+#
+# Usage: 
+#
+# epi_path
+# seed_path
+# output_path
+#
+
+# 20260524 Created by William
+
+
+
+
+zmap_file=${1}
+seed_file=${2}
+output_filename=${3}
+
+
+# echo "zmap_file=${zmap_file}"
+# echo "seed_file=${seed_file}"
+# echo "output_filename=${output_filename}"
+
+python3 /bml/projects/07_inference-clinical-trial/projects/07-09_ntsec-lego-fmri-connectivity/code/PYTHON/ZMAPNOSEED.py "${zmap_file}" "${seed_file}" "${output_filename}"
