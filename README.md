@@ -7,7 +7,7 @@ In my thesis research, I employed a **seed-to-voxel resting-state functional con
 ## Notes
 
 As these data originate from an ongoing research project, I apologize that I am unable to publicly share the raw data at this time. However, all preprocessing and analysis pipelines used in this project are provided here.
-The pipeline integrates **SPM**, **MATLAB scripts**, and **Python scripts**, orchestrated through **Bash scripts** to facilitate large-scale batch processing.
+The pipeline integrates **SPM**, **MATLAB scripts**, and **Python scripts**, orchestrated through **Bash scripts** to facilitate large-scale bash processing.
 I am currently considering writing a more detailed user guide for the pipeline XD.
 * The main pipeline is located in: `.../pipeline`
 * The shell scripts stored in the `/bin` directory should be placed under `~/bin`
