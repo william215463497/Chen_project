@@ -9,7 +9,7 @@ In my thesis research, I employed a **seed-to-voxel resting-state functional con
 As these data originate from an ongoing research project, I apologize that I am unable to publicly share the raw data at this time. However, all preprocessing and analysis pipelines used in this project are provided here.
 The pipeline integrates **SPM**, **MATLAB scripts**, and **Python scripts**, orchestrated through **Bash scripts** to facilitate large-scale bash processing.
 I am currently considering writing a more detailed user guide for the pipeline XD.
-* The main pipeline is located in: `.../pipeline`
+* The main pipeline is located in: `.../Pipeline`
 * The shell scripts stored in the `/bin` directory should be placed under `~/bin`
 
 
@@ -22,17 +22,46 @@ Abstract:
   Inference is a higher-order cognitive function that depends on the coordinated engagement of multiple brain regions. As such, understanding inference requires not only the examination of regional brain activity but also the investigation of functional interactions among distributed neural networks. Based on our previous findings, this project will focus on the functional connectivity of brain regions that demonstrated sensitivity to the LEGO intervention, including the right hippocampus and left para-hippocampal gyrus. Using resting-state functional connectivity analysis and a ROI-ROI approach, we aim to characterize intervention-related changes in functional connectivity and identify the neural networks associated with improvements in inference performance. This project will provide insight into the cross-brain-area neural mechanisms that support inference and its enhancement through cognitive training. To sum up, this finding is expected not only to provide a stronger theoretical foundation for the ICT project, but also advance our understanding of the neural mechanisms underlying inference.
 
 ## Processing Method
+**Using VER2_PREPROC_WILLIAM_FC_pipeline.sh**
 1. Motion correction
 2. Slice-time correction
-3 Coregister T2-T1-EPI
-4. TAPAS PHYSIO denoise
-5. Fslmerge (detrend and bendpass)
+3. Coregister T2-T1-EPI
+4. SEGMENT_T1
+5. TAPAS PHYSIO denoise
+6. Fslmerge (detrend and bendpass)
+7. MERGE_RESIDUALS
+8. DETREND_BANDPASS_RESIDUALS
 
+**Now we have corrected, agrassive denoised resting-state fMRI signal**
 
+//////////////////////////////////////////////////////////////////
 
+For analysis(For BHS: ROI-ROI FC analysis)
 
+**Using FOR_BHS.sh**
+1. SST Template
+2. Segment SST (For deformation field)
+3. ATLAS(MNI) to ATLAS(SST)
+4. ATLAS(SST) to ATLAS(subject space)
+5. Subject specific ATLAS
+6. ROI - ROI Functional connectivity analysis using python
 
+**Now we have ROI-ROI Functional connectivity array ready for second level analysis**  
 
+## How to use my repo?  
+**Before using my/josh's shell**
+- Download /Chen_project/bin intp your /home/YOUR_USERNAME/bin
+- Download /Chen_project/PYTHON intp your .../project/code
+- Install MATLAB 
+- Install SPM(12 or 25 both fine) 
+- Add SPM into MATLAB path.
+- Install FSL 
+- Install AFNI  
+
+**Repo introduction**
+JOSH_SPMpipeline: original josh's perprocess pipeline
+PYTHON: .py and .inbpy file for .sh to call
+USEFUL_CODE: .mat/.py/.sh for all kinds of function(EX: REALIGN_CHECK, VOLUME_CUT_END.....)
 
 
 
