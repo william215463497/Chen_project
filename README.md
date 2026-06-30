@@ -47,6 +47,8 @@ For analysis(For BHS: ROI-ROI FC analysis)
 6. ROI - ROI Functional connectivity analysis using python
 
 **Now we have ROI-ROI Functional connectivity array ready for second level analysis**  
+<img width="547" height="520" alt="image" src="https://github.com/user-attachments/assets/30399a53-425e-4ffa-a24b-60f8b58ebfa0" />  
+
 
 ## How to use my repo?  
 **Before using my/josh's shell**
