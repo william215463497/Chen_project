@@ -58,11 +58,15 @@ For analysis(For BHS: ROI-ROI FC analysis)
 - Install FSL 
 - Install AFNI  
 
-**Repo introduction**
-JOSH_SPMpipeline: original josh's perprocess pipeline
-PYTHON: .py and .inbpy file for .sh to call
-USEFUL_CODE: .mat/.py/.sh for all kinds of function(EX: REALIGN_CHECK, VOLUME_CUT_END.....)
-
+**Repo introduction**  
+JOSH_SPMpipeline: original josh's perprocess pipeline  
+PYTHON: .py and .inbpy file for .sh to call  
+USEFUL_CODE: .mat/.py/.sh for all kinds of function(EX: REALIGN_CHECK, VOLUME_CUT_END.....)  
+pipelines: Main charactor!   
+  VER2_PREPROC_WILLIAM_FC_pipeline.sh: For PREPROC
+  FOR_BHS.sh: For ROI-ROI analysis
+    
+**UPDATE!!!　We now have FINAL_FOR_BHS.sh for preprocess and analysis in a single pipeline**
 
 
 # About me
