@@ -49,6 +49,7 @@ GROUP_NAME=group
 LVL2_STATS_RESIDUALS=0 # 1: Save, 0: Do not save
 LVL2_STATS_DELETE_CONS=1 # 1: Delete, 0: Do not delete
 
+
 # SELECT ROUTINES
 SUBJ_LEVEL_PREPROC="no"
 DICOM2NII="no"
