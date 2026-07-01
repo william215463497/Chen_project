@@ -55,7 +55,8 @@ For analysis(For BHS: ROI-ROI FC analysis)
 - Download /Chen_project/bin intp your /home/YOUR_USERNAME/bin
 - Download /Chen_project/PYTHON intp your .../project/code
 - Install MATLAB 
-- Install SPM(12 or 25 both fine) 
+- Install SPM(12 or 25 both fine)
+- Instll python 3
 - Add SPM into MATLAB path.
 - Install FSL 
 - Install AFNI  
