@@ -32,7 +32,7 @@ Abstract:
 7. MERGE_RESIDUALS
 8. DETREND_BANDPASS_RESIDUALS
 
-**Now we have corrected, agrassive denoised resting-state fMRI signal**
+**Now we have corrected, agrassive denoised resting-state fMRI image**
 
 //////////////////////////////////////////////////////////////////
 
