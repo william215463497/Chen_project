@@ -8,8 +8,6 @@ RAW_DIR=${PROJECT_DIR}/data/rawdata
 
 # SEL_DATA_ARR=("NTUSEC266")
 EXC_DATA_ARR=("")
-
-
 ROI_NAME=("roi1_HIP_R")
 ROI=("ROI1")
 
