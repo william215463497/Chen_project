@@ -3,6 +3,7 @@ This is William Chen's brainhack school project repo.
 During this semester's BrainHack School, I explored an alternative approach to analyzing data from our laboratory's ICT project.
 In my thesis research, I employed a **seed-to-voxel resting-state functional connectivity** approach. In contrast, for this BrainHack School project, I adopted the **ROI-to-ROI functional connectivity** method introduced in the course. In addition, I incorporated my own modification by using a **subject-specific AAL atlas** to achieve more precise and individualized analyses.
 
+PPT(SG): https://docs.google.com/presentation/d/1IHBD0hX35g2hD0K24wJOKa1wA7yKq8Wkfk1fAe40ad0/edit?usp=sharing
 
 ## Notes
 
