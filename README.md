@@ -22,7 +22,7 @@ Abstract:
   Inference is a higher-order cognitive function that depends on the coordinated engagement of multiple brain regions. As such, understanding inference requires not only the examination of regional brain activity but also the investigation of functional interactions among distributed neural networks. Based on our previous findings, this project will focus on the functional connectivity of brain regions that demonstrated sensitivity to the LEGO intervention, including the right hippocampus and left para-hippocampal gyrus. Using resting-state functional connectivity analysis and a ROI-ROI approach, we aim to characterize intervention-related changes in functional connectivity and identify the neural networks associated with improvements in inference performance. This project will provide insight into the cross-brain-area neural mechanisms that support inference and its enhancement through cognitive training. To sum up, this finding is expected not only to provide a stronger theoretical foundation for the ICT project, but also advance our understanding of the neural mechanisms underlying inference.
 
 ## Processing Method
-**Using Chen_project/pipelines/VER2_PREPROC_WILLIAM_FC_pipeline.sh**
+**Using Chen_project/PPPPPipelines/VER2_PREPROC_WILLIAM_FC_pipeline.sh**
 1. Motion correction
 2. Slice-time correction
 3. Coregister T2-T1-EPI
@@ -38,7 +38,7 @@ Abstract:
 
 For analysis(For BHS: ROI-ROI FC analysis)
 
-**Using Chen_project/pipelines/FOR_BHS.sh**
+**Using Chen_project/PPPPPPipelines/FOR_BHS.sh**
 1. SST Template
 2. Segment SST (For deformation field)
 3. ATLAS(MNI) to ATLAS(SST)
